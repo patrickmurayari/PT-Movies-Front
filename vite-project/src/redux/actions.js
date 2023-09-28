@@ -6,7 +6,7 @@ export function getMovies() {
     return async function (dispatch) {
         console.log('actiopns');
         try {
-            var json = await axios.get(`http://localhost:3001/movie/all`)
+            var json = await axios.get(`https://pt-movies-back.vercel.app/movie/all`)
             console.log('::JSON.DATA::', json.data);
             return dispatch({
                 type: GET_MOVIES,
@@ -21,7 +21,7 @@ export function getMovies() {
 export function getNameSearch(name) {
     return async function (dispatch) {
         try {
-            var getName = await axios.get(`http://localhost:3001/movie/all?name=${name}`);
+            var getName = await axios.get(`https://pt-movies-back.vercel.app/movie/all?name=${name}`);
             return dispatch({
                 type: GET_NAME_SEARCH,
                 payload: getName.data
@@ -36,7 +36,7 @@ export function getOrderMovie(value) {
     console.log(value);
     return async function (dispatch) {
         try {
-            var json = await axios.get(`http://localhost:3001/movie/orderMovies?order=${value}`);
+            var json = await axios.get(`https://pt-movies-back.vercel.app/movie/orderMovies?order=${value}`);
             return dispatch({
                 type: GET_ORDER_MOVIE,
                 payload: json.data
@@ -51,7 +51,7 @@ export function getTypeMovie(value) {
     console.log(value);
     return async function (dispatch) {
         try {
-            var json = await axios.get(`http://localhost:3001/movie/typeFilter?type=${value}`);
+            var json = await axios.get(`https://pt-movies-back.vercel.app/movie/typeFilter?type=${value}`);
             return dispatch({
                 type: GET_TYPE_MOVIE,
                 payload: json.data
@@ -67,7 +67,7 @@ export function getYearFilter(startYear ,endYear) {
     console.log('::input2::', endYear);
     return async function (dispatch) {
         try {
-            var json = await axios.get(`http://localhost:3001/movie/yearFilter?rango1=${startYear}&rango2=${endYear}`);
+            var json = await axios.get(`https://pt-movies-back.vercel.app/movie/yearFilter?rango1=${startYear}&rango2=${endYear}`);
             return dispatch({
                 type: GET_FILTER_YEAR,
                 payload: json.data
