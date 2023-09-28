@@ -14,6 +14,7 @@ import youtube from '../img/youtube.png'
 import foto1 from "../img/img1.jpg"
 import foto2 from "../img/img2.jpg"
 import foto3 from "../img/img3.jpg"
+import SearchBar from './SearchBar';
 
 const slides = [
 
@@ -34,7 +35,7 @@ export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const dispatch = useDispatch()
-    const allMovies = useSelector((state) => state.arr)
+    const allMovies = useSelector((state) => state.Movies)
     const numPage = useSelector((state) => state.numPage);
 
     let desde = (numPage - 1) * 8;
@@ -92,21 +93,7 @@ export default function Home() {
                     </div>
                 ))}
             </div>
-            <div className="flex justify-center mt-24">
-                <div className="relative">
-                    <input
-                        className=" w-80 md:w-96 pl-10 pr-4 py-2 rounded-l-lg border border-black"
-                        type="text"
-                        placeholder="Search"
-                    />
-                    <button
-                        className="absolute inset-y-0 right-0 px-4 py-2 rounded-r-lg bg-blue-400 text-white"
-                        type="button"
-                    >
-                        <SearchIcon className="w-6 h-6" />
-                    </button>
-                </div>
-            </div>
+            <SearchBar />
             <div>
                 <Filters />
             </div>

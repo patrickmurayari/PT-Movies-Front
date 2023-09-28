@@ -1,7 +1,8 @@
-import { GET_MOVIES , NEXT_PAGE, PREV_PAGE} from "./typeActions";
+import { GET_MOVIES, NEXT_PAGE, PREV_PAGE, GET_NAME_SEARCH, GET_ORDER_MOVIE, GET_TYPE_MOVIE, GET_FILTER_YEAR } from "./typeActions";
 
 const InitialState = {
-    arr: [],
+    AllMovies: [],
+    Movies: [],
     numPage: 1,
 }
 
@@ -11,7 +12,28 @@ const rootReducer = (state = InitialState, { type, payload }) => {
         case GET_MOVIES:
             return {
                 ...state,
-                arr: [...payload]
+                Movies: [...payload],
+                AllMovies: [...payload]
+            }
+        case GET_NAME_SEARCH:
+            return {
+                ...state,
+                Movies: [...payload]
+            }
+        case GET_ORDER_MOVIE:
+            return {
+                ...state,
+                Movies: [...payload]
+            }
+        case GET_TYPE_MOVIE:
+            return {
+                ...state,
+                Movies: [...payload]
+            }
+        case GET_FILTER_YEAR:
+            return {
+                ...state,
+                Movies: [...payload]
             }
         case NEXT_PAGE:
             return {
