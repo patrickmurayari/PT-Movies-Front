@@ -16,8 +16,13 @@ const Cards = ({ id, image, title, release_year, type_title }) => {
                                         (<h6 className="text-lg md:text-lg text-center">Header: By Regine Phalange</h6>)
                             }
                             <div>
-                                <h3 className="font-bold items-center flex justify-center">
+                                <h3 className="font-bold items-start flex justify-center">
                                     {release_year}
+                                </h3>
+                            </div>
+                            <div>
+                                <h3 className="font-bold items-start flex justify-center">
+                                    {type_title}
                                 </h3>
                             </div>
                         </div>
